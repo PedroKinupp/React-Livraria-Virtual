@@ -57,3 +57,15 @@ button {
     outline: none;
     text-decoration: none;  
 }
+
+:root{
+	--primaryOrange:#EF6B4A;
+	--hoverOrange: #e05330;
+	--primaryPurple: #6251DD;
+	--hoverPurple: #120385;
+	--primaryBlack: #090937;
+	--primaryGray: #555555;
+	--backgroundBlue: #F4F4FF;
+	--backgroundHover: #c9c9da;
+	--primaryFont: 'Manrope'
+}
