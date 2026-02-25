@@ -1,0 +1,41 @@
+.header{
+    height: 7.5rem;
+    display: flex;
+    box-shadow: 0px 8px 10px 0px #09093705;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+}
+
+.mainButton button{
+    width: 3.75rem;
+    height: 2.4375rem;
+}
+
+.mainButton img{
+    width: 3.75rem;
+    height: 2.4375rem;
+}
+
+.buttons{
+    display: flex;
+    gap: 16px;
+}
+
+.buttons button{
+    height: 3.125rem;
+    width: 3.125rem;
+    background: #F4F4FF;
+    border-radius: 3px;
+
+    &:hover{
+        background: #c9c9da;
+    }
+}
+
+.buttons button img{
+    height: 1.5rem;
+    width: 1.5rem;
+}
