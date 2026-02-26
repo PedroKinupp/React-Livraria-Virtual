@@ -1,0 +1,49 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.figure{
+    width: 50%;
+    height: 1024px;
+    background-image: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('../../assets/BannerLogin.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.info{
+    width:50%;
+    padding: 5% 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.Logo{
+    align-self: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.text h1{
+    font-family: Manrope;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+}
+
+.text h2{
+    font-family: Manrope;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 18px;
+    color: var(--primaryGray)
+}
