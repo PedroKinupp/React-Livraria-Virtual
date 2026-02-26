@@ -27,11 +27,11 @@
 .buttons button{
     height: 3.125rem;
     width: 3.125rem;
-    background: #F4F4FF;
+    background: var(--backgroundBlue);
     border-radius: 3px;
 
     &:hover{
-        background: #c9c9da;
+        background: var(--backgroundHover);
     }
 }
 
