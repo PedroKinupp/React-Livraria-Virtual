@@ -10,7 +10,7 @@ interface PropsType{
 
 export default function BookCard(props : PropsType){
     return(
-        <div className={styles.container}>
+        <div className={props.isCompact? styles.narrowContainer : styles.wideContainer}>
             <figure className={styles.cover}>
                 <img src={props?.capa}  className={props.isCompact? styles.narrowCover : styles.wideCover}/>
             </figure>
