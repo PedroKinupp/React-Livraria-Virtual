@@ -1,0 +1,112 @@
+.box{
+    margin: 24px 10%;
+    display: flex;
+    flex-direction: column;
+    gap:3.125rem;
+}
+
+.goBack{
+    max-width: fit-content;
+    font-family: Manrope;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: .625rem
+}
+
+.goBack img{
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.container{
+    display:flex;
+    gap: 5.75rem
+}
+
+.container figure{
+    border-radius: 4px;
+    background: var(--backgroundBlue);
+    padding: 3.75rem;
+    border: 1px solid #0909371A;
+    max-height: fit-content;
+}
+
+.container img{
+    width: 18.75rem;
+    height: 28.125rem;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px 0px #6251DD33;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    gap: .925rem;
+}
+
+.header h1{
+    font-family: Manrope;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 2.25rem;
+    color: var(--primaryBlack)
+}
+
+.header h2{
+    font-family: Manrope;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 1.5rem;
+    color: var(--primaryGray)
+}
+
+.article{
+    display: flex;
+    flex-direction: column;
+    gap: .625rem
+}
+
+.article h3{
+    font-family: Manrope;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 1.25rem;
+    color: var(--primaryBlack)
+}
+
+.article p{
+    font-family: Manrope;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 1.125rem;
+    line-height: 40px;
+    letter-spacing: 0%;
+    text-align: justify;
+    color: var(--primaryGray);
+}
+
+.addCart{
+    background-color: var(--primaryOrange);
+    border-radius: 4px;
+    display: flex;
+    padding: 1rem;
+    font-family: Manrope;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 1.25rem;
+    gap: 3.5rem;
+    color: white;
+    align-self: flex-end;
+
+    &:hover{
+        background-color: var(--hoverOrange);
+    }
+}
