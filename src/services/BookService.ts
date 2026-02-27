@@ -7,9 +7,9 @@ const api = axios.create({
 
 export const BookService = {
 
-  async getByID(id: number): Promise<BookType[]> {
+  async getByID(id: number): Promise<BookType> {
     const response = await api.get<BookType>(`/livros/${id}`)
-    return [response.data]
+    return response.data
   },
 
   async getByGenre(genero: string): Promise<BookType[]> {
