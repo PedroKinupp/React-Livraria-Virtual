@@ -1,0 +1,16 @@
+.errorMessage{
+    font-family: Manrope;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    color: rgb(139, 15, 15)
+}
+
+.container{
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+}
