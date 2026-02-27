@@ -7,13 +7,13 @@
     flex-wrap: wrap;
     gap: 1.25rem;
     width: 20rem;
-    justify-content: space-between;
 }
 
 .wideContainer{
     cursor: pointer;
     background-color: var(--backgroundBlue);
     padding: .9375rem;
+    padding-bottom: 1.5rem;
     border: 1px solid #0909371A;
     display: flex;
     flex-wrap: wrap;
@@ -66,6 +66,7 @@
 }
 
 .header p{
+    max-width: 10rem;
     font-family: Manrope;
     font-weight: 600;
     font-style: SemiBold;
