@@ -8,16 +8,18 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.mainButton}>
-        <Link to='/home'>
+        <Link to="/home">
           <figure>
             <img src={Logo} />
           </figure>
         </Link>
       </div>
       <div className={styles.buttons}>
-        <button>
-          <img src={LoginIcon} />
-        </button>
+        <Link to="/" className={styles.link}>
+          <button>
+            <img src={LoginIcon} />
+          </button>
+        </Link>
         <button>
           <img src={CartIcon} />
         </button>
