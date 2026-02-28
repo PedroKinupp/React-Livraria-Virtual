@@ -1,0 +1,43 @@
+.bookShelf{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: fit-content;
+}
+
+.booksByGenre{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 20px;
+}
+
+.shelf{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+    align-items: center;
+}
+
+.header h1{
+    font-family: Manrope;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    color: var(--primaryBlack)
+}
+
+.link{
+    font-family: Manrope;
+    text-decoration: none;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    color: var(--primaryOrange)
+}
