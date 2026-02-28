@@ -12,11 +12,12 @@ export const BookService = {
     return response.data
   },
 
-  async getByGenre(genero: string, titulo: string): Promise<BookType[]> {
+  async getByGenre(genero: string, titulo?: string, limit?: number): Promise<BookType[]> {
     const response = await api.get<BookType[]>("/livros", {
       params: { 
         genero,
-        titulo_like : titulo
+        titulo_like : titulo,
+        _limit: limit
       }
     })
     return response.data
