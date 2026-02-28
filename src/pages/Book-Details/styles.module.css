@@ -13,6 +13,8 @@
     font-size: 24px;
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: var(--primaryBlack);
     gap: .625rem
 }
 

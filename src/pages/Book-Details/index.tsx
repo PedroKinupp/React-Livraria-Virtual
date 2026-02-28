@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BookService } from "../../services/BookService";
 import { useEffect, useState } from "react";
 import type { BookType } from "../../types/BookType";
@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 import back from "../../assets/backIcon.png";
 
 export default function BookDetails() {
+  const navigate = useNavigate()
   const { bookID } = useParams();
   const [book, setBook] = useState<BookType | undefined>();
 
@@ -24,7 +25,7 @@ export default function BookDetails() {
       <Header />
       <main>
         <div className={styles.box}>
-          <button className={styles.goBack}>
+          <button onClick={() => navigate(-1)}className={styles.goBack}>
             <img src={back} />
             Detalhes do Livro
           </button>
