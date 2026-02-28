@@ -33,7 +33,7 @@ export default function BookShelf() {
   return (
     <div className={styles.bookShelf}>
       {books.map((bookByGenre, index) => (
-        <section className={styles.shelf}>
+        <section key={index} className={styles.shelf}>
             <div className={styles.header}>
                 <h1>{Generos[index]}</h1>
                 <Link to={`/GenrePage/${Generos[index]}`} className={styles.link}>Ver mais</Link>
@@ -47,6 +47,7 @@ export default function BookShelf() {
                     preco={book.preco}
                     titulo={book.titulo}
                     isCompact={true}
+                    id={book.id}
                 />
                 </ul>
             ))}
