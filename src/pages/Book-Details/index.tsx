@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { BookType } from "../../types/BookType";
 import Header from "../../components/Header";
 import styles from "./styles.module.css";
-import back from "../../assets/back.png";
+import back from "../../assets/backIcon.png";
 
 export default function BookDetails() {
   const { bookID } = useParams();
