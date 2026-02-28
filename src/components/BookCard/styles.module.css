@@ -16,6 +16,7 @@
 .wideContainer{
     cursor: pointer;
     min-height: 28rem;
+    max-width: 20rem;
     background-color: var(--backgroundBlue);
     padding: .9375rem;
     padding-bottom: 1.5rem;

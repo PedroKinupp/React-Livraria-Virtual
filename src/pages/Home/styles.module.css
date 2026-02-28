@@ -8,7 +8,7 @@
 }
 
 .discount{
-    width: 80%;
+    width: fit-content;
     height: 25rem;
 }
 

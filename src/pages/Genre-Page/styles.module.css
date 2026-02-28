@@ -47,7 +47,7 @@
     display: flex;
     width: fit-content;
     flex-direction: column;
-    align-self: flex-start;
+    align-self: center;
     gap: 2rem;
 }
 
@@ -68,7 +68,8 @@
 .box{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    max-width: 100rem;
+    justify-content: flex-start;
     align-items: center;
     gap: 3rem;
 }
