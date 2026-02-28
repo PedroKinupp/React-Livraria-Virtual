@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './styles.module.css'
 
 interface PropsType{
@@ -6,12 +7,12 @@ interface PropsType{
     autor?: string
     preco?: number
     isCompact?: boolean
-    onclick?: () => void
+    id: number
 }
 
 export default function BookCard(props : PropsType){
     return(
-        <button onClick={props.onclick}>
+        <Link to={`/BookDetails/${props.id}`} className={styles.link}>
             <div className={props.isCompact? styles.narrowContainer : styles.wideContainer}>
                 <figure className={styles.cover}>
                     <img src={props?.capa}  className={props.isCompact? styles.narrowCover : styles.wideCover}/>
@@ -24,6 +25,6 @@ export default function BookCard(props : PropsType){
                     <span className={props.isCompact? styles.narrowPrice : styles.widePrice}>R$ {props?.preco}</span>
                 </div>
             </div>
-        </button>
+        </Link>
     )
 }

@@ -1,3 +1,7 @@
+.link{
+    text-decoration: none;
+}
+
 .narrowContainer{
     cursor: pointer;
     background-color: var(--backgroundBlue);
@@ -11,6 +15,7 @@
 
 .wideContainer{
     cursor: pointer;
+    min-height: 28rem;
     background-color: var(--backgroundBlue);
     padding: .9375rem;
     padding-bottom: 1.5rem;
