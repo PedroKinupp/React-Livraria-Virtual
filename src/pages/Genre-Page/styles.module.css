@@ -6,6 +6,10 @@
     color: rgb(139, 15, 15)
 }
 
+.link{
+    text-decoration: none;
+}
+
 .container{
     padding: 60px;
     display: flex;
