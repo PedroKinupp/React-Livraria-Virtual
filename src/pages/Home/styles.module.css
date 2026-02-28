@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    padding: 5rem;
+}
+
+.discount{
+    width: 80%;
+    height: 25rem;
+}
+
+.discountImg{
+    height: 25rem;
+}
