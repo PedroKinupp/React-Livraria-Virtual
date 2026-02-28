@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BookService } from "../../services/BookService";
 import type { BookType } from "../../types/BookType";
 import searchIcon from "../../assets/searchIcon.png";
@@ -12,12 +12,17 @@ export default function GenrePage() {
   const { Genre } = useParams();
   const [books, setBook] = useState<BookType[]>([]);
   const [search, setSearch] = useState<string>("");
+  const navigate = useNavigate()
 
   async function loadBook(Genre: string | undefined, search: string) {
     if (Genre) {
       const response = await BookService.getByGenre(Genre, search);
       setBook(response);
     }
+  }
+
+  function handleClick(id: number){
+    navigate(`/BookDetails/${id}`)
   }
 
   useEffect(() => {
@@ -50,6 +55,7 @@ export default function GenrePage() {
                     preco={book.preco}
                     titulo={book.titulo}
                     isCompact={false}
+                    onclick={() => handleClick(book.id)}
                   />
                   <br />
                 </ul>
