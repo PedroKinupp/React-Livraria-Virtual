@@ -7,3 +7,5 @@ export interface BookType {
     sinopse: string,
     capa: string
 }
+
+export type BookResponse = BookType[];
