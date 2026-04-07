@@ -5,12 +5,22 @@ import Header from "../../components/Header";
 import BookCard from "../../components/BookCard";
 import styles from "./styles.module.css";
 import { useBooksByGenre } from "../../hooks/useBooksByGenre";
-//import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { BookType } from "../../types/BookType";
 
 export default function GenrePage() {
   const { Genre } = useParams();
   const { data } = useBooksByGenre(Genre);
-  //const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>("");
+  const [books, setBooks] = useState<BookType[]>([]);
+
+  function checkName(book: BookType) {
+    return book.titulo.toLowerCase().includes(search.toLowerCase());
+  }
+
+  useEffect(() => {
+    setBooks(data ? data.filter(checkName) : []);
+  }, [search, data]);
 
   return (
     <>
@@ -21,7 +31,7 @@ export default function GenrePage() {
           <input
             className={styles.input}
             placeholder="Pesquisar por título"
-            //onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
         <div className={styles.main}>
@@ -32,7 +42,7 @@ export default function GenrePage() {
             </button>
           </Link>
           <div className={styles.box}>
-            {data?.map(book => (
+            {books?.map(book => (
                 <ul key={book.id}>
                   <BookCard
                     autor={book.autor}
