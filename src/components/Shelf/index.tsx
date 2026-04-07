@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useBooksByGenre } from "../../hooks/useBooksByGenre";
 import BookCard from "../BookCard";
 import styles from './styles.module.css'
+import LoadingMsg from "../loadingMsg";
+import ErrorMsg from "../errorMsg";
 
 type ShelfProps = {
   genre: string;
@@ -18,7 +20,9 @@ export default function Shelf({ genre }: ShelfProps) {
             <div className={styles.header}>
                 <h1 className={styles.title}>{genre}</h1>
             </div>
-                <p className={styles.mesage}>Carregando...</p>
+            <div className={styles.msg}>
+                <LoadingMsg/>
+            </div>
         </section>
         );
     }
@@ -29,7 +33,9 @@ export default function Shelf({ genre }: ShelfProps) {
             <div className={styles.header}>
                 <h1 className={styles.title}>{genre}</h1>
             </div>
-                <p className={styles.mesage}>Erro ao carregar livros</p>
+            <div className={styles.msg}>
+                <ErrorMsg/>
+            </div>
         </section>
         );
     }

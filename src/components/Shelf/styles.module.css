@@ -36,10 +36,7 @@
     color: var(--primaryOrange)
 }
 
-.mesage{
-    font-family: Manrope;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 32px;
-    color: var(--primaryOrange)
+.msg{
+    display: flex;
+    justify-content: center;
 }
