@@ -1,28 +1,17 @@
-import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { BookService } from "../../services/BookService";
-import type { BookType } from "../../types/BookType";
 import searchIcon from "../../assets/searchIcon.png";
 import backIcon from "../../assets/backIcon.png";
 import Header from "../../components/Header";
 import BookCard from "../../components/BookCard";
 import styles from "./styles.module.css";
+import { useBooksByGenre } from "../../hooks/useBooksByGenre";
+//import { useState } from "react";
 
 export default function GenrePage() {
   const { Genre } = useParams();
-  const [books, setBook] = useState<BookType[]>([]);
-  const [search, setSearch] = useState<string>("");
+  const { data } = useBooksByGenre(Genre);
+  //const [search, setSearch] = useState<string>("");
 
-  async function loadBook(Genre: string | undefined, search: string) {
-    if (Genre) {
-      const response = await BookService.getByGenre(Genre, search);
-      setBook(response);
-    }
-  }
-
-  useEffect(() => {
-    loadBook(Genre, search);
-  }, [Genre, search]);
   return (
     <>
       <Header />
@@ -32,7 +21,7 @@ export default function GenrePage() {
           <input
             className={styles.input}
             placeholder="Pesquisar por título"
-            onChange={(e) => setSearch(e.target.value)}
+            //onChange={(e) => setSearch(e.target.value)}
           />
         </div>
         <div className={styles.main}>
@@ -43,8 +32,7 @@ export default function GenrePage() {
             </button>
           </Link>
           <div className={styles.box}>
-            {books.length > 0 ? (
-              books?.map((book) => (
+            {data?.map(book => (
                 <ul key={book.id}>
                   <BookCard
                     autor={book.autor}
@@ -56,10 +44,7 @@ export default function GenrePage() {
                   />
                   <br />
                 </ul>
-              ))
-            ) : (
-              <h1 className={styles.errorMessage}>Livro não encontrado :(</h1>
-            )}
+              ))}
           </div>
         </div>
       </div>
