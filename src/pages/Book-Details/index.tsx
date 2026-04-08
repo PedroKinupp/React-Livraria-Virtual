@@ -17,7 +17,7 @@ export default function BookDetails() {
       <main>
         <div className={styles.box}>
           <button onClick={() => navigate(-1)}className={styles.goBack}>
-            <img src={back}/>
+            <img src={back} className={styles.back}/>
             Detalhes do Livro
           </button>
 
@@ -34,17 +34,17 @@ export default function BookDetails() {
           {isSuccess ? 
             <>
               <div className={styles.container}>
-              <figure>
-                <img src={data?.capa} />
+              <figure className={styles.frame}>
+                <img src={data?.capa} className={styles.cover}/>
               </figure>
               <div className={styles.info}>
                 <section className={styles.header}>
-                  <h1>{data?.titulo}</h1>
-                  <h2>{data?.autor}</h2>
+                  <p className={styles.title}>{data?.titulo}</p>
+                  <p className={styles.author}>{data?.autor}</p>
                 </section>
                 <article className={styles.article}>
-                  <h3>Sinopse</h3>
-                  <p>{data?.sinopse}</p>
+                  <h3 className={styles.intro}>Sinopse</h3>
+                  <p className={styles.synopsis}>{data?.sinopse}</p>
                 </article>
               </div>
             </div>
