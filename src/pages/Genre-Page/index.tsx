@@ -7,10 +7,12 @@ import styles from "./styles.module.css";
 import { useBooksByGenre } from "../../hooks/useBooksByGenre";
 import { useEffect, useState } from "react";
 import type { BookType } from "../../types/BookType";
+import LoadingMsg from "../../components/loadingMsg";
+import ErrorMsg from "../../components/errorMsg";
 
 export default function GenrePage() {
   const { Genre } = useParams();
-  const { data } = useBooksByGenre(Genre);
+  const { data, isLoading, isError } = useBooksByGenre(Genre);
   const [search, setSearch] = useState<string>("");
   const [books, setBooks] = useState<BookType[]>([]);
 
@@ -35,13 +37,17 @@ export default function GenrePage() {
           />
         </div>
         <div className={styles.main}>
-          <Link to='/Home' className={styles.link}>
-            <button className={styles.button}>
-              <img src={backIcon} />
-              {Genre}
-            </button>
-          </Link>
+          <div className={styles.header}>
+            <Link to='/Home' className={styles.link}>
+              <button className={styles.button}>
+                <img src={backIcon} className={styles.goBack}/>
+                {Genre}
+              </button>
+            </Link>
+          </div>
           <div className={styles.box}>
+            {isLoading ? <LoadingMsg/> : <></>}
+            {isError ? <ErrorMsg/> : <></>}
             {books?.map(book => (
                 <ul key={book.id}>
                   <BookCard
