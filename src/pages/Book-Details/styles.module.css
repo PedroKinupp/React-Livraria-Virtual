@@ -28,6 +28,13 @@
     gap: 5.75rem
 }
 
+.msg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
 .container figure{
     border-radius: 4px;
     background: var(--backgroundBlue);
